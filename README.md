@@ -43,10 +43,9 @@ postgres_db → Base de datos PostgreSQL en el puerto 5432
 
 🧩 Migraciones (opcional)
 
-Si tu proyecto usa migraciones (y tienes una carpeta migrations/), ejecútalas con:
+Ejecútalas con:
 
 docker exec -it nest_app npm run migration:run
-
 
 ⚠️ Si tienes synchronize: true en la configuración de TypeORM, no necesitas correr migraciones, las tablas se crearán automáticamente.
 
@@ -62,11 +61,9 @@ Levanta los contenedores de Docker:
 
 docker-compose up -d
 
-
 Ejecuta las pruebas en el contenedor:
 
 docker exec -it nest_app npm test
-
 
 Esto correrá Jest y mostrará todos los tests unitarios.
 
