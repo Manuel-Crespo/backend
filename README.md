@@ -1,6 +1,6 @@
 # 🚀 Backend NestJS con Docker y PostgreSQL
 
-Este proyecto es una API REST construida con **NestJS** y **TypeORM**, conectada a una base de datos **PostgreSQL**, totalmente contenedorizada con **Docker**.
+Este proyecto es una API REST construida con **NestJS** y **TypeORM**, conectada a una base de datos **PostgreSQL**, totalmente contenerizada con **Docker**.
 
 ---
 
