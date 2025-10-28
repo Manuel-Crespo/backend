@@ -24,7 +24,7 @@ POSTGRES_HOST=postgres_db
 POSTGRES_PORT=5432
 POSTGRES_USER=nest_user
 POSTGRES_PASSWORD=nest_password
-POSTGRES_DB=nest_db
+POSTGRES_DB=nest_db´´´
 
 # Puerto donde corre la API
 PORT=3000
@@ -34,7 +34,6 @@ PORT=3000
 Para levantar toda la aplicación (API + Base de datos):
 
 docker-compose up --build -d
-
 
 Esto levantará:
 
@@ -56,6 +55,20 @@ docker exec -it nest_app npm run migration:run
 Una vez levantado el contenedor, accede a la documentación interactiva en:
 
 👉 http://localhost:3000/api/docs
+
+🧪 Pruebas Unitarias
+
+Levanta los contenedores de Docker:
+
+docker-compose up -d
+
+
+Ejecuta las pruebas en el contenedor:
+
+docker exec -it nest_app npm test
+
+
+Esto correrá Jest y mostrará todos los tests unitarios.
 
 🔗 Endpoints disponibles
 
