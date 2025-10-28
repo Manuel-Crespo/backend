@@ -1,0 +1,42 @@
+services:
+  postgres_db:
+    image: postgres:16
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: backend
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend-net
+
+  nest_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nest_app
+    environment:
+      DB_HOST: postgres_db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: backend
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres_db
+    networks:
+      - backend-net
+    command: >
+      sh -c "npm install && npm run start:dev"
+
+volumes:
+  postgres_data:
+
+networks:
+  backend-net:
+    driver: bridge
