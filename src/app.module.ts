@@ -15,7 +15,7 @@ import { VehiclesModule } from './vehicles/vehicle.module';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       autoLoadEntities: true,
-      synchronize: false,
+      synchronize: true,
       migrations: [__dirname + '/migrations/*{.ts,.js}'],
       migrationsRun: true,
     }),
